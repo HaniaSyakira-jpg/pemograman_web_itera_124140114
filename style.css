@@ -1,0 +1,314 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #263b35;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: #167c67;
+    color: white;
+    padding: 30px 6%;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #e1f3ec;
+    font-size: 14px;
+}
+
+main {
+    width: 88%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+    color: #167c67;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 17px;
+}
+
+.form-group label,
+.promo-section label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #ccd8d3;
+    border-radius: 7px;
+    background-color: white;
+    color: #263b35;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #9aa7a1;
+}
+
+input:focus {
+    outline: none;
+    border-color: #167c67;
+    box-shadow: 0 0 0 3px rgba(22, 124, 103, 0.12);
+}
+
+.error {
+    display: block;
+    color: #d93025;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.input-error {
+    border: 1px solid #d93025;
+    background-color: #fffafa;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: #167c67;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #105b4c;
+}
+
+.btn-secondary {
+    background-color: #e5eee9;
+    color: #167c67;
+}
+
+.btn-secondary:hover {
+    background-color: #d4e5dc;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 14px;
+}
+
+thead {
+    background-color: #167c67;
+    color: white;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border: 1px solid #e0e8e4;
+    text-align: left;
+}
+
+th {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background-color: #f7fbf8;
+}
+
+.empty-message {
+    text-align: center;
+    color: #829089;
+    padding: 25px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #edf1ef;
+    font-size: 14px;
+}
+
+.summary-row strong {
+    text-align: right;
+}
+
+.total-row {
+    margin-top: 5px;
+    padding: 18px 0;
+    color: #167c67;
+    font-size: 17px;
+    font-weight: bold;
+    border-bottom: 2px solid #167c67;
+}
+
+.payment-section {
+    max-width: 700px;
+    margin-left: auto;
+}
+
+.promo-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.promo-section label {
+    display: block;
+}
+
+.promo-input {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.promo-input input {
+    flex: 1;
+}
+
+.promo-input button {
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+#pesanPromo {
+    display: block;
+    margin-top: 7px;
+    font-size: 12px;
+}
+
+.promo-success {
+    color: #167c67;
+}
+
+.promo-error {
+    color: #d93025;
+}
+
+.payment-input {
+    margin-top: 22px;
+}
+
+.payment-message {
+    padding: 12px;
+    margin: 12px 0 18px;
+    background-color: #f2f7f4;
+    color: #52675e;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.payment-error {
+    color: #c62828;
+    background-color: #ffebee;
+}
+
+.payment-success {
+    color: #167c67;
+    background-color: #e5f5ed;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: #829089;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 25px 5%;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    main {
+        width: 92%;
+        margin: 20px auto;
+    }
+
+    .section {
+        padding: 18px;
+        margin-bottom: 18px;
+    }
+
+    .section h2 {
+        font-size: 19px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+    }
+
+    .payment-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .header h1 {
+        font-size: 21px;
+    }
+
+    .section {
+        padding: 14px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 11px 13px;
+    }
+
+    .promo-input {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript - Array & Objek</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+
+    section {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 18px;
+      margin: 20px 0;
+    }
+
+    input, select, button {
+      padding: 9px;
+      margin: 4px 2px;
+    }
+
+    input, select {
+      max-width: 100%;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f4f8;
+    }
+
+    .error {
+      color: #c62828;
+    }
+
+    .success {
+      color: #16803c;
+    }
+
+    .hasil {
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Praktikum JavaScript Dasar</h1>
+  <p>Bab 3: Array & Objek</p>
+
+  <section>
+    <h2>1. Array dan Metode Array</h2>
+    <div id="array-demo"></div>
+  </section>
+
+  <section>
+    <h2>2. Bekerja dengan Objek</h2>
+    <div id="objek-demo"></div>
+  </section>
+
+  <section>
+    <h2>3. Daftar Mahasiswa</h2>
+    <p>Data mahasiswa ditampilkan dalam bentuk tabel.</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Jurusan</th>
+            <th>Nilai</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-mahasiswa"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Analisis Nilai Mahasiswa</h2>
+    <button id="btn-tertinggi">Cari Nilai Tertinggi</button>
+    <button id="btn-diatas-rata">Nilai di Atas Rata-rata</button>
+
+    <div id="hasil-analisis" class="hasil"></div>
+  </section>
+
+  <section>
+    <h2>5. Urutkan Mahasiswa Berdasarkan Nama</h2>
+    <select id="urutan-nama">
+      <option value="asc">Ascending (A–Z)</option>
+      <option value="desc">Descending (Z–A)</option>
+    </select>
+    <button id="btn-urutkan">Urutkan</button>
+    <div id="hasil-urutan" class="hasil"></div>
+  </section>
+
+  <section>
+    <h2>6. CRUD Data Mahasiswa</h2>
+    <form id="form-mahasiswa">
+      <input type="hidden" id="id-mahasiswa">
+
+      <div>
+        <label for="nama-mahasiswa">Nama:</label><br>
+        <input type="text" id="nama-mahasiswa" required minlength="3">
+      </div>
+
+      <div>
+        <label for="nim-mahasiswa">NIM:</label><br>
+        <input type="text" id="nim-mahasiswa" required>
+      </div>
+
+      <div>
+        <label for="jurusan-mahasiswa">Jurusan:</label><br>
+        <input type="text" id="jurusan-mahasiswa" required>
+      </div>
+
+      <div>
+        <label for="nilai-mahasiswa">Nilai (0–100):</label><br>
+        <input type="number" id="nilai-mahasiswa" min="0" max="100" required>
+      </div>
+
+      <button type="submit" id="btn-simpan">Tambah Mahasiswa</button>
+      <button type="button" id="btn-batal" hidden>Batal Edit</button>
+    </form>
+
+    <p id="pesan-crud" class="hasil" aria-live="polite"></p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Jurusan</th>
+            <th>Nilai</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-crud"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

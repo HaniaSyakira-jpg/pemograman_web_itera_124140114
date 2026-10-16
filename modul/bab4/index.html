@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum JavaScript - DOM & API</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+
+    section {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 18px;
+      margin: 20px 0;
+    }
+
+    input, textarea, button {
+      padding: 9px;
+      margin: 4px 2px;
+      max-width: 100%;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    input, textarea {
+      box-sizing: border-box;
+    }
+
+    .error { color: #c62828; }
+    .success { color: #16803c; }
+
+    .post, .todo-item, .dom-item {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 12px;
+      margin: 10px 0;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.65;
+    }
+
+    .dark-mode {
+      background: #181818;
+      color: #f2f2f2;
+    }
+
+    .dark-mode section,
+    .dark-mode .post,
+    .dark-mode .todo-item,
+    .dark-mode .dom-item {
+      border-color: #555;
+      background: #252525;
+    }
+
+    .dark-mode input,
+    .dark-mode textarea {
+      background: #333;
+      color: #fff;
+      border: 1px solid #777;
+    }
+
+    .dark-mode button {
+      background: #444;
+      color: #fff;
+      border: 1px solid #777;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Praktikum JavaScript Dasar</h1>
+  <p>Bab 4: DOM & API</p>
+
+  <section>
+    <h2>1. Demo Manipulasi DOM</h2>
+    <div id="dom-output"></div>
+    <button id="btn-tambah-item">Tambah Item</button>
+    <button id="btn-hapus-item">Hapus Item</button>
+    <button id="btn-ubah-warna">Ubah Warna</button>
+  </section>
+
+  <section>
+    <h2>2. Demo Fetch API</h2>
+    <button id="btn-fetch">Ambil Data Post</button>
+    <p id="api-status" aria-live="polite"></p>
+    <div id="api-output"></div>
+
+    <div class="controls">
+      <label for="search-post">Cari judul post:</label>
+      <input id="search-post" type="search" placeholder="Ketik judul post">
+    </div>
+
+    <div class="controls">
+      <button id="btn-prev">Previous</button>
+      <span id="page-info">Halaman 0</span>
+      <button id="btn-next">Next</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Form Mahasiswa</h2>
+    <form id="form-mahasiswa">
+      <div>
+        <label for="nama-mahasiswa">Nama (minimal 3 karakter)</label><br>
+        <input id="nama-mahasiswa" type="text" minlength="3" required>
+      </div>
+      <div>
+        <label for="nim-mahasiswa">NIM</label><br>
+        <input id="nim-mahasiswa" type="text" required>
+      </div>
+      <div>
+        <label for="jurusan-mahasiswa">Jurusan</label><br>
+        <input id="jurusan-mahasiswa" type="text" required>
+      </div>
+      <div>
+        <label for="nilai-mahasiswa">Nilai (0–100)</label><br>
+        <input id="nilai-mahasiswa" type="number" min="0" max="100" required>
+      </div>
+      <button type="submit">Tambah Mahasiswa</button>
+    </form>
+    <p id="pesan-mahasiswa" aria-live="polite"></p>
+    <div id="daftar-mahasiswa"></div>
+  </section>
+
+  <section>
+    <h2>4. Dark Mode</h2>
+    <button id="btn-dark-mode" aria-pressed="false">Aktifkan Dark Mode</button>
+  </section>
+
+  <section>
+    <h2>5. Todo List</h2>
+    <form id="form-todo">
+      <input id="input-todo" type="text" placeholder="Tulis tugas..." required>
+      <button type="submit">Tambah Tugas</button>
+    </form>
+    <p id="pesan-todo" aria-live="polite"></p>
+    <div id="daftar-todo"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
