@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">PERSONAL WORKSPACE</p>
+            <h1>Student Dashboard</h1>
+            <p class="subtitle">Satu tempat untuk mengatur hari kuliahmu.</p>
+        </div>
+        <div class="date-box">
+            <span>HARI INI</span>
+            <strong id="currentDate">Memuat tanggal...</strong>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="welcome card">
+            <div>
+                <p class="eyebrow">HALO, MAHASISWA! 👋</p>
+                <h2>Pelan-pelan, yang penting selesai.</h2>
+                <p>Atur tugas, jadwal, dan catatanmu supaya kegiatan kuliah lebih terorganisir.</p>
+            </div>
+            <div class="welcome-icon">✦</div>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card card">
+                <span>Total Tugas</span>
+                <strong id="totalTasks">0</strong>
+                <small>Semua tugasmu</small>
+            </article>
+            <article class="stat-card card">
+                <span>Belum Selesai</span>
+                <strong id="pendingTasks">0</strong>
+                <small>Perlu dikerjakan</small>
+            </article>
+            <article class="stat-card card">
+                <span>Selesai</span>
+                <strong id="completedTasks">0</strong>
+                <small>Kerja bagus!</small>
+            </article>
+        </section>
+
+        <div class="main-grid">
+            <section class="card panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">TASK MANAGER</p>
+                        <h2>Daftar Tugas</h2>
+                    </div>
+                    <span class="section-icon">✓</span>
+                </div>
+
+                <form id="taskForm">
+                    <label for="taskTitle">Nama tugas</label>
+                    <input id="taskTitle" type="text" placeholder="Contoh: Laporan praktikum PAW" required>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="taskCourse">Mata kuliah</label>
+                            <input id="taskCourse" type="text" placeholder="Contoh: PAW" required>
+                        </div>
+                        <div>
+                            <label for="taskDeadline">Deadline</label>
+                            <input id="taskDeadline" type="date" required>
+                        </div>
+                    </div>
+
+                    <button class="primary-button" type="submit" id="taskSubmit">+ Tambah Tugas</button>
+                    <button class="secondary-button hidden" type="button" id="cancelEdit">Batal Edit</button>
+                </form>
+
+                <div class="list-toolbar">
+                    <h3>Tugas Saya</h3>
+                    <select id="taskFilter" aria-label="Filter tugas">
+                        <option value="all">Semua</option>
+                        <option value="pending">Belum selesai</option>
+                        <option value="completed">Selesai</option>
+                    </select>
+                </div>
+                <div id="taskList" class="task-list"></div>
+            </section>
+
+            <div class="side-column">
+                <section class="card panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">WEEKLY PLAN</p>
+                            <h2>Jadwal Kuliah</h2>
+                        </div>
+                        <span class="section-icon">◷</span>
+                    </div>
+
+                    <form id="scheduleForm">
+                        <label for="scheduleDay">Hari</label>
+                        <select id="scheduleDay" required>
+                            <option value="">Pilih hari</option>
+                            <option>Senin</option>
+                            <option>Selasa</option>
+                            <option>Rabu</option>
+                            <option>Kamis</option>
+                            <option>Jumat</option>
+                            <option>Sabtu</option>
+                            <option>Minggu</option>
+                        </select>
+
+                        <label for="scheduleTime">Waktu</label>
+                        <input id="scheduleTime" type="time" required>
+
+                        <label for="scheduleCourse">Nama mata kuliah</label>
+                        <input id="scheduleCourse" type="text" placeholder="Nama mata kuliah" required>
+
+                        <label for="scheduleRoom">Ruangan (opsional)</label>
+                        <input id="scheduleRoom" type="text" placeholder="Contoh: Lab Informatika">
+
+                        <button class="primary-button" type="submit">+ Tambah Jadwal</button>
+                    </form>
+                    <div id="scheduleList" class="schedule-list"></div>
+                </section>
+
+                <section class="card panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">QUICK NOTES</p>
+                            <h2>Catatan Pribadi</h2>
+                        </div>
+                        <span class="section-icon">✎</span>
+                    </div>
+
+                    <form id="noteForm">
+                        <label for="noteTitle">Judul catatan</label>
+                        <input id="noteTitle" type="text" placeholder="Contoh: Ide proyek" required>
+
+                        <label for="noteContent">Isi catatan</label>
+                        <textarea id="noteContent" rows="3" placeholder="Tulis hal yang perlu diingat..." required></textarea>
+
+                        <button class="primary-button" type="submit" id="noteSubmit">+ Simpan Catatan</button>
+                        <button class="secondary-button hidden" type="button" id="cancelNoteEdit">Batal Edit</button>
+                    </form>
+                    <div id="noteList" class="note-list"></div>
+                </section>
+
+                <section class="quote-card">
+                    <p class="eyebrow">DAILY INSPIRATION</p>
+                    <div class="quote-mark">“</div>
+                    <p id="quoteText">Sedang mengambil inspirasi hari ini...</p>
+                    <p id="quoteAuthor" class="quote-author">Student Dashboard</p>
+                    <button id="refreshQuote" class="quote-button" type="button">Kutipan baru ↻</button>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <p>Made for your student life ✦ <span id="storageStatus">Data disimpan di perangkatmu.</span></p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
