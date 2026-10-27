@@ -1,0 +1,32 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f7f9;
+  font-family: Arial, sans-serif;
+  color: #333333;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 30px 16px;
+}
+
+.main-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.main-content h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.task-count {
+  margin-top: 16px;
+  color: #666666;
+  font-size: 14px;
+}

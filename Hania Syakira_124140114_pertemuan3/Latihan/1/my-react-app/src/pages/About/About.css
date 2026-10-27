@@ -1,0 +1,13 @@
+
+.about-task-stats {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #fffbd1;
+  border-left: 4px solid #FFEB00;
+  border-radius: 6px;
+  line-height: 1.6;
+}
+
+.about-task-stats strong {
+  color: #333333;
+}

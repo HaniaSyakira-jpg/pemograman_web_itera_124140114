@@ -1,0 +1,91 @@
+
+.container {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.stats p {
+  margin: 0;
+}
+
+.completed-count {
+  color: #10b981;
+}
+
+.remaining-count {
+  color: #ef4444;
+}
+
+.screen-status {
+  width: fit-content;
+  margin: 0 auto 1rem;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.screen-status.mobile {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.screen-status.desktop {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.clear-button {
+  display: block;
+  margin: 0 0 1.5rem auto;
+  padding: 10px 14px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear-button:hover:not(:disabled) {
+  background-color: #c62828;
+}
+
+.clear-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.task-list {
+  width: 100%;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+}
+
+@media (max-width: 480px) {
+  .stats {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

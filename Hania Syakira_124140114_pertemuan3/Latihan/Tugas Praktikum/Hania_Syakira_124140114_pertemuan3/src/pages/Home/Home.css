@@ -1,0 +1,118 @@
+
+/* FIX LAYOUT BOOKSPACE */
+.page-container {
+  width: min(1160px, calc(100% - 40px)) !important;
+  margin: 0 auto !important;
+  padding: 28px 0 60px !important;
+}
+
+.hero {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 30px !important;
+  padding: 44px !important;
+  border-radius: 24px !important;
+  background: linear-gradient(120deg, #312e81, #6d5bd0) !important;
+  color: white !important;
+}
+
+.hero-content {
+  max-width: 630px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem) !important;
+  line-height: 1.12 !important;
+  margin: 12px 0 !important;
+}
+
+.hero-description {
+  line-height: 1.8 !important;
+  color: #e0e7ff !important;
+}
+
+.hero-illustration {
+  display: grid !important;
+  place-items: center !important;
+  flex-shrink: 0;
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 12%);
+}
+
+.hero-illustration span {
+  font-size: 5rem !important;
+}
+
+.stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  margin: 25px 0 30px !important;
+}
+
+.mini-stat {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 20px !important;
+  border: 1px solid #e8e6f2;
+  border-radius: 15px;
+  background: white;
+}
+
+.mini-stat-icon {
+  display: grid !important;
+  place-items: center !important;
+  flex-shrink: 0;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 12px;
+  background: #f0effb;
+}
+
+.collection-section {
+  display: grid !important;
+  gap: 17px !important;
+}
+
+.collection-heading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 850px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .hero {
+    padding: 28px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-container {
+    width: calc(100% - 24px) !important;
+    padding-top: 16px !important;
+  }
+
+  .hero-illustration {
+    display: none !important;
+  }
+
+  .stats-grid {
+    gap: 10px !important;
+  }
+
+  .mini-stat {
+    padding: 12px !important;
+  }
+}
